@@ -20,6 +20,7 @@ const Component = () => {
         Course_Type: courseType,
         MenuItems: parseInt(menuItems),
         Price: parseFloat(price),
+        Averageprice: parseInt(price)
       };
       setDishes([...dishes, newDish]);
       clearForm();
@@ -42,7 +43,10 @@ const Component = () => {
       <View style={styles.headingContainer}>
         <Text style={styles.dishName}>ChrisHouse</Text>
       </View>
-
+<SafeAreaView style={styles.cotainer}>
+  <View style={Styles.headingContainer}>
+    <Text style={Styles.Homescreen}>ChrisHouse</Text>
+    </View>
       <View style={styles.listView}>
         <FlatList
           style={styles.listStyle}
@@ -55,6 +59,7 @@ const Component = () => {
               <Text style={styles.detailText}>Course Type: {item.Course_Type}</Text>
               <Text style={styles.detailText}>Menu Items: {item.MenuItems}</Text>
               <Text style={styles.detailText}>Price: ${item.Price.toFixed(2)}</Text>
+              <Text style-={Styles.detailText}>AveragePrice:${item.AveragePrice.toFixed(2)}</Text>
             </View>
           )}
         />
@@ -115,7 +120,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   headingContainer: {
-    backgroundColor: 'pink',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 20,
